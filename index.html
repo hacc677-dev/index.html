@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn smart with GPT - Đăng Nhập</title>
+  <link rel="stylesheet" href="styles/global.css" />
+  <link rel="stylesheet" href="styles/login.css" />
+  <link rel="stylesheet" href="styles/animations.css" />
+</head>
+<body data-page="login" data-base="">
+  <main class="auth-shell">
+    <section class="auth-hero glass-panel">
+      <div class="brand-row">
+        <div class="brand-mark">GPT</div>
+        <div>
+          <p class="eyebrow">Learn smart with GPT</p>
+          <h1 data-i18n="login_brand_title">AI Scholar - Nền tảng định hướng sử dụng ChatGPT học thuật cho học sinh Trung Học</h1>
+        </div>
+      </div>
+
+      <div class="auth-hero-copy">
+        <p data-i18n="login_hero_copy">
+          DÀNH CHO TOÀN NGƯỜI CÓ NHU CẦU SỬ DỤNG CHATGPT HIỆU QUẢ TRONG CÔNG VIỆC VÀ HỌC TẬP
+        </p>
+      </div>
+
+      <div class="auth-benefits">
+        <div class="benefit-card">
+          <span>01</span>
+          <p data-i18n="login_benefit_1">CÔNG CỤ VIẾT PROMPT LỆNH CHÍNH XÁC CHỈ TRONG VÀI GIÂY</p>
+        </div>
+        <div class="benefit-card">
+          <span>02</span>
+          <p data-i18n="login_benefit_2">KHAI PHÁ TỐI ĐA SỨC MẠNH CỦA CHATGPT</p>
+        </div>
+        <div class="benefit-card">
+          <span>03</span>
+          <p data-i18n="login_benefit_3">TỐI ƯU HIỆU QUẢ TRONG HỌC TẬP VÀ LÀM VIỆC</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="auth-card glass-panel">
+      <div class="auth-tabs">
+        <button class="tab-btn active" data-auth-tab="login" data-i18n="tab_login">Đăng nhập</button>
+        <button class="tab-btn" data-auth-tab="register" data-i18n="tab_register">Đăng ký</button>
+      </div>
+
+      <div class="auth-panels">
+        <form id="loginForm" class="auth-form active" novalidate autocomplete="off">
+          <h2 data-i18n="login_title">Chào mừng đến với AI Scholar</h2>
+          <p class="muted" data-i18n="login_subtitle">Đăng nhập để sử dụng toàn bộ chức năng!!!</p>
+
+          <label>
+            <span data-i18n="label_email">Email</span>
+            <input type="email" name="email" placeholder="" autocomplete="off" required />
+          </label>
+
+          <label>
+            <span data-i18n="label_password">Mật khẩu</span>
+            <input type="password" name="password" placeholder="" autocomplete="new-password" required />
+          </label>
+
+          <div class="form-row">
+            <label class="checkbox">
+              <input type="checkbox" name="remember" />
+              <span data-i18n="remember_me">Ghi nhớ lần đăng nhập!!</span>
+            </label>
+            <button type="button" class="link-btn" id="forgotPasswordBtn" data-i18n="forgot_password">Quên mật khẩu?</button>
+          </div>
+
+          <button type="submit" class="primary-btn liquid-btn" data-i18n="btn_login">Đăng nhập</button>
+
+          <div class="divider"><span data-i18n="or_continue">Hoặc tiếp tục với</span></div>
+
+          <div class="social-grid">
+            <button type="button" class="social-btn" data-social="Google">Google</button>
+            <button type="button" class="social-btn" data-social="GitHub">GitHub</button>
+          </div>
+
+          <p class="form-note" data-i18n="login_note">
+            Vui lòng nhập chính xác email và mật khẩu đã đăng ký để truy cập vào tài khoản của bạn.
+          </p>
+        </form>
+
+        <form id="registerForm" class="auth-form" novalidate autocomplete="off">
+          <h2 data-i18n="register_title">Tạo tài khoản </h2>
+          <p class="muted" data-i18n="register_subtitle">Hãy nhập chính xác thông tin của bạn để bổ sung vào hồ sơ cá nhân!!</p>
+
+          <label>
+            <span data-i18n="label_full_name">Họ và tên</span>
+            <input type="text" name="fullName" placeholder="" autocomplete="off" required />
+          </label>
+
+          <div class="two-col">
+            <label>
+              <span data-i18n="label_email">Email</span>
+              <input type="email" name="email" placeholder="" autocomplete="off" required />
+            </label>
+            <label>
+              <span data-i18n="label_phone">Số điện thoại</span>
+              <input type="tel" name="phone" placeholder="" autocomplete="off" required />
+            </label>
+          </div>
+
+          <div class="two-col">
+            <label>
+              <span data-i18n="label_role">Vai trò</span>
+              <select name="role" required>
+                <option value=""></option>
+                <option value="student" data-i18n="role_student">Học sinh</option>
+                <option value="teacher" data-i18n="role_teacher">Giáo viên</option>
+                <option value="self" data-i18n="role_self">Tự học</option>
+              </select>
+            </label>
+            <label>
+              <span data-i18n="label_class">Lớp học</span>
+              <select name="classLevel">
+                <option value=""></option>
+                <option value="Lớp 6">Lớp 6</option><option value="Lớp 7">Lớp 7</option><option value="Lớp 8">Lớp 8</option><option value="Lớp 9">Lớp 9</option>
+                <option value="Lớp 10">Lớp 10</option><option value="Lớp 11">Lớp 11</option><option value="Lớp 12">Lớp 12</option>
+              </select>
+            </label>
+          </div>
+
+          <label>
+            <span data-i18n="label_purpose">Mục đích sử dụng</span>
+            <input type="text" name="purpose" placeholder="" autocomplete="off" />
+            <small class="field-note" data-i18n="purpose_optional_note">có thể bỏ qua</small>
+          </label>
+
+          <div class="two-col">
+            <label>
+              <span data-i18n="label_password">Mật khẩu</span>
+              <input type="password" name="password" placeholder="" autocomplete="new-password" minlength="8" required />
+            </label>
+            <label>
+              <span data-i18n="label_password_confirm">Xác nhận mật khẩu</span>
+              <input type="password" name="confirmPassword" placeholder="" autocomplete="new-password" minlength="8" required />
+            </label>
+          </div>
+
+          <label class="checkbox">
+            <input type="checkbox" name="accept" required />
+            <span data-i18n="accept_terms">Tôi đồng ý và chấp nhận các điều khoản và điều kiện.</span>
+          </label>
+
+          <button type="submit" class="primary-btn liquid-btn" data-i18n="btn_create_account">Tạo tài khoản</button>
+          <p class="form-note" data-i18n="register_note">
+            Sau khi đăng ký hệ thống sẽ phản hồi ngay lập tức!
+          </p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <div class="loading-overlay hidden" id="loadingOverlay" aria-hidden="true">
+    <div class="loading-card glass-panel">
+      <div class="spinner"></div>
+      <strong data-i18n="loading_title">Đang tải nội dung...</strong>
+      <span data-i18n="loading_subtitle">Vui lòng đợi trong giây lát…</span>
+    </div>
+  </div>
+
+  <div class="modal-backdrop hidden" id="forgotModal" aria-hidden="true">
+    <div class="modal-card glass-panel">
+      <div class="modal-head">
+        <h3 data-i18n="forgot_title">Khôi phục mật khẩu</h3>
+        <button class="icon-btn" data-close-modal aria-label="Close">×</button>
+      </div>
+      <p class="muted" data-i18n="forgot_desc">
+        Nhập email để nhận mã bảo mật đặt lại mật khẩu.
+      </p>
+      <label>
+        <span data-i18n="label_email">Email</span>
+        <input type="email" id="forgotEmail" placeholder="" autocomplete="off" />
+      </label>
+      <button id="sendResetBtn" class="primary-btn liquid-btn" data-i18n="btn_send_link">Gửi mã và liên kết  khôi phục</button>
+    </div>
+  </div>
+
+  <div id="chatWidgetHost"></div>
+  <div id="toastRoot" class="toast-root"></div>
+
+  <script src="scripts/app.js"></script>
+  <script src="scripts/language.js"></script>
+  <script src="scripts/components.js"></script>
+  <script src="scripts/chatbot.js"></script>
+  <script src="scripts/auth.js"></script>
+</body>
+</html>
