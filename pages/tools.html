@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Scholar - Tools</title>
+  <link rel="stylesheet" href="../styles/global.css" />
+  <link rel="stylesheet" href="../styles/tools.css" />
+  <link rel="stylesheet" href="../styles/animations.css" />
+</head>
+<body data-page="tools" data-base="../">
+  <div id="site-header"></div>
+  <main class="page-shell">
+    <section class="section">
+      <div class="section-head">
+        <span class="section-tag" data-i18n="tools_tag">Tools</span>
+        <h1 data-i18n="tools_title">Nền tảng định hướng sử dụng ChatGPT học thuật cho học sinh Trung Học.</h1>
+        <p class="muted" data-i18n="tools_desc">Mỗi công cụ dùng preset riêng để tạo đầu ra rõ, ngắn gọn và dùng được ngay.</p>
+      </div>
+
+      <div class="tool-grid">
+        <article class="tool-card glass-panel">
+          <div class="tool-head">
+            <div>
+              <span class="tool-badge">01</span>
+              <h2 data-i18n="tool1_title">Tạo prompt học tập</h2>
+            </div>
+            <p data-i18n="tool1_subtitle">Môn học, lớp, câu hỏi và đầu ra mong muốn.</p>
+          </div>
+          <div class="tool-layout">
+            <form class="tool-form" id="studyToolForm">
+              <div class="two-col">
+                <label>
+                  <span data-i18n="label_subject">Môn học</span>
+                  <select name="subject">
+                    <option>Toán</option>
+                    <option>Ngữ văn</option>
+                    <option>Tiếng Anh</option>
+                    <option>Vật lý</option>
+                    <option>Hóa học</option>
+                    <option>Lịch sử</option>
+                    <option>Địa lý</option>
+                    <option>Tin học</option>
+                  </select>
+                </label>
+                <label>
+                  <span data-i18n="label_class">Lớp học</span>
+                  <select name="classLevel">
+                    <option>Lớp 6</option><option>Lớp 7</option><option>Lớp 8</option><option>Lớp 9</option>
+                    <option>Lớp 10</option><option>Lớp 11</option><option>Lớp 12</option>
+                  </select>
+                </label>
+              </div>
+              <label>
+                <span data-i18n="label_question">Câu hỏi muốn hỏi</span>
+                <textarea name="question" rows="4" placeholder="Ví dụ: Giải thích định lý Pythagore bằng cách dễ hiểu..."></textarea>
+              </label>
+              <label>
+                <span data-i18n="label_output">Đầu ra mong muốn</span>
+                <textarea name="output" rows="4" placeholder="Ví dụ: Giải thích ngắn gọn, có ví dụ, kèm mẹo ghi nhớ..."></textarea>
+              </label>
+              <button type="submit" class="primary-btn" data-i18n="btn_generate_prompt">Tạo prompt</button>
+            </form>
+            <div class="result-panel">
+              <div class="result-head">
+                <strong data-i18n="prompt_result">Prompt hoàn chỉnh</strong>
+                <button class="ghost-btn small" data-copy-target="studyResult" data-i18n="btn_copy">Copy</button>
+              </div>
+              <pre id="studyResult" class="result-output"></pre>
+            </div>
+          </div>
+        </article>
+
+        <article class="tool-card glass-panel">
+          <div class="tool-head">
+            <div>
+              <span class="tool-badge">02</span>
+              <h2 data-i18n="tool2_title">Tạo prompt viết code</h2>
+            </div>
+            <p data-i18n="tool2_subtitle">Mục tiêu, ngôn ngữ, kiểu project và yêu cầu đặc biệt.</p>
+          </div>
+          <div class="tool-layout">
+            <form class="tool-form" id="codeToolForm">
+              <div class="two-col">
+                <label>
+                  <span data-i18n="label_language">Ngôn ngữ</span>
+                  <input type="text" name="language" placeholder="JavaScript, Python..." />
+                </label>
+                <label>
+                  <span data-i18n="label_project_type">Kiểu project</span>
+                  <input type="text" name="projectType" placeholder="Landing page, dashboard..." />
+                </label>
+              </div>
+              <label>
+                <span data-i18n="label_goal">Mục tiêu code</span>
+                <textarea name="goal" rows="4" placeholder="Ví dụ: Xây dựng layout responsive cho trang login..."></textarea>
+              </label>
+              <label>
+                <span data-i18n="label_special">Yêu cầu đặc biệt</span>
+                <textarea name="special" rows="4" placeholder="Ví dụ: Clean code, accessibility, tối ưu mobile..."></textarea>
+              </label>
+              <button type="submit" class="primary-btn" data-i18n="btn_generate_prompt">Tạo prompt</button>
+            </form>
+            <div class="result-panel">
+              <div class="result-head">
+                <strong data-i18n="prompt_result">Prompt hoàn chỉnh</strong>
+                <button class="ghost-btn small" data-copy-target="codeResult" data-i18n="btn_copy">Copy</button>
+              </div>
+              <pre id="codeResult" class="result-output"></pre>
+            </div>
+          </div>
+        </article>
+
+        <article class="tool-card glass-panel">
+          <div class="tool-head">
+            <div>
+              <span class="tool-badge">03</span>
+              <h2 data-i18n="tool3_title">Tạo prompt công việc</h2>
+            </div>
+            <p data-i18n="tool3_subtitle">Task, planning, ghi chú và quản lý ưu tiên.</p>
+          </div>
+          <div class="tool-layout">
+            <form class="tool-form" id="workToolForm">
+              <label>
+                <span data-i18n="label_task">Mô tả nhiệm vụ</span>
+                <textarea name="task" rows="5" placeholder="Ví dụ: Lập kế hoạch học tuần này, chia việc theo độ ưu tiên..."></textarea>
+              </label>
+              <div class="two-col">
+                <label>
+                  <span data-i18n="label_deadline">Deadline / thời gian</span>
+                  <input type="text" name="deadline" placeholder="Hôm nay, cuối tuần..." />
+                </label>
+                <label>
+                  <span data-i18n="label_output_type">Kiểu đầu ra</span>
+                  <input type="text" name="outputType" placeholder="Checklist, bảng kế hoạch..." />
+                </label>
+              </div>
+              <button type="submit" class="primary-btn" data-i18n="btn_generate_prompt">Tạo prompt</button>
+            </form>
+            <div class="result-panel">
+              <div class="result-head">
+                <strong data-i18n="prompt_result">Prompt hoàn chỉnh</strong>
+                <button class="ghost-btn small" data-copy-target="workResult" data-i18n="btn_copy">Copy</button>
+              </div>
+              <pre id="workResult" class="result-output"></pre>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <div id="chatWidgetHost"></div>
+  <div id="site-footer"></div>
+
+  <script src="../scripts/app.js"></script>
+  <script src="../scripts/language.js"></script>
+  <script src="../scripts/components.js"></script>
+  <script src="../scripts/chatbot.js"></script>
+  <script src="../scripts/tools.js"></script>
+  <script src="../scripts/router.js"></script>
+</body>
+</html>

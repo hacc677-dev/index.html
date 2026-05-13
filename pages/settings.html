@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Scholar - Settings</title>
+  <link rel="stylesheet" href="../styles/global.css" />
+  <link rel="stylesheet" href="../styles/settings.css" />
+  <link rel="stylesheet" href="../styles/animations.css" />
+</head>
+<body data-page="settings" data-base="../">
+  <div id="site-header"></div>
+  <main class="page-shell">
+    <section class="section">
+      <div class="section-head">
+        <span class="section-tag" data-i18n="settings_tag">Settings</span>
+        <h1 data-i18n="settings_title">Quản lý hồ sơ và ngôn ngữ giao diện.</h1>
+        <p class="muted" data-i18n="settings_desc">Thông tin được lấy từ đăng nhập/đăng ký và có thể chỉnh lại ngay trong giao diện.</p>
+      </div>
+
+      <div class="settings-grid">
+        <aside class="profile-card glass-panel">
+          <div class="profile-avatar" id="profileAvatar"></div>
+          <h2 id="profileName">—</h2>
+          <p id="profileRole" class="muted">—</p>
+          <div class="profile-meta">
+            <div><span data-i18n="label_email">Email</span><strong id="profileEmail">—</strong></div>
+            <div><span data-i18n="label_phone">Số điện thoại</span><strong id="profilePhone">—</strong></div>
+            <div><span data-i18n="label_class">Lớp học</span><strong id="profileClass">—</strong></div>
+            <div><span data-i18n="label_purpose">Mục đích sử dụng</span><strong id="profilePurpose">—</strong></div>
+          </div>
+        </aside>
+
+        <div class="settings-stack">
+          <article class="settings-card glass-panel">
+            <div class="panel-head">
+              <h2 data-i18n="edit_profile_title">Chỉnh sửa thông tin cá nhân</h2>
+              <span class="pill" id="saveStatus" data-i18n="status_ready">Sẵn sàng</span>
+            </div>
+            <form id="settingsForm" class="settings-form">
+              <div class="two-col">
+                <label>
+                  <span data-i18n="label_full_name">Họ và tên</span>
+                  <input type="text" name="fullName" required />
+                </label>
+                <label>
+                  <span data-i18n="label_email">Email</span>
+                  <input type="email" name="email" required />
+                </label>
+              </div>
+              <div class="two-col">
+                <label>
+                  <span data-i18n="label_phone">Số điện thoại</span>
+                  <input type="tel" name="phone" required />
+                </label>
+                <label>
+                  <span data-i18n="label_class">Lớp học</span>
+                  <input type="text" name="classLevel" />
+                </label>
+              </div>
+              <div class="two-col">
+                <label>
+                  <span data-i18n="label_role">Vai trò</span>
+                  <input type="text" name="role" />
+                </label>
+                <label>
+                  <span data-i18n="label_purpose">Mục đích sử dụng</span>
+                  <input type="text" name="purpose" />
+                </label>
+              </div>
+              <button class="primary-btn liquid-btn" type="submit" data-i18n="btn_save_changes">Lưu thay đổi</button>
+            </form>
+          </article>
+
+          <article class="settings-card glass-panel">
+            <div class="panel-head">
+              <h2 data-i18n="settings_avatar_title">Ảnh đại diện</h2>
+              <span class="pill">Avatar</span>
+            </div>
+            <div class="avatar-uploader">
+              <div class="avatar-upload-preview" id="avatarUploadPreview"></div>
+              <div class="avatar-upload-copy">
+                <p data-i18n="settings_avatar_desc">Tải ảnh của bạn lên để dùng làm avatar trong hồ sơ góc trên bên phải.</p>
+                <div class="upload-actions">
+                  <label class="primary-btn liquid-btn upload-trigger">
+                    <span data-i18n="settings_avatar_button">Tải ảnh lên</span>
+                    <input type="file" id="avatarInput" accept="image/*" hidden />
+                  </label>
+                  <button class="ghost-btn" type="button" id="removeAvatarBtn" data-i18n="settings_avatar_remove">Xóa ảnh</button>
+                </div>
+                <small class="field-note" data-i18n="settings_avatar_note">Nếu chưa có ảnh, hệ thống sẽ dùng avatar chữ viết tắt thay thế.</small>
+              </div>
+            </div>
+          </article>
+
+          <article class="settings-card glass-panel">
+            <div class="panel-head">
+              <h2 data-i18n="language_title">Ngôn ngữ</h2>
+              <span class="pill">VN / EN</span>
+            </div>
+            <p class="muted" data-i18n="language_desc">Đổi ngôn ngữ chính của giao diện</p>
+            <div class="lang-switch">
+              <button class="lang-btn active" data-lang="vi">Tiếng Việt</button>
+              <button class="lang-btn" data-lang="en">English</button>
+            </div>
+          </article>
+
+          <article class="settings-card glass-panel">
+            <div class="panel-head">
+              <h2 data-i18n="theme_title">Giao diện</h2>
+              <span class="pill" id="themeStatus">Light</span>
+            </div>
+            <p class="muted" data-i18n="theme_desc">Chọn chế độ sáng hoặc tối.</p>
+            <div class="theme-switch">
+              <button class="theme-btn" type="button" data-theme="light" data-i18n="theme_light">Light mode</button>
+              <button class="theme-btn" type="button" data-theme="dark" data-i18n="theme_dark">Dark mode</button>
+            </div>
+          </article>
+
+          <article class="settings-card glass-panel danger-card">
+            <div class="panel-head">
+              <h2 data-i18n="logout_title">Đăng xuất</h2>
+              <span class="pill">Session</span>
+            </div>
+            <p class="muted" data-i18n="logout_desc">Đăng xuất và quay về màn hình đăng nhập.</p>
+            <button class="ghost-btn" type="button" id="logoutBtn" data-i18n="btn_logout">Đăng xuất</button>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="chatWidgetHost"></div>
+  <div id="site-footer"></div>
+
+  <script src="../scripts/app.js"></script>
+  <script src="../scripts/language.js"></script>
+  <script src="../scripts/components.js"></script>
+  <script src="../scripts/chatbot.js"></script>
+  <script src="../scripts/settings.js"></script>
+  <script src="../scripts/router.js"></script>
+</body>
+</html>
